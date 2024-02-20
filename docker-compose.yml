@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+    proxy:
+        build: apps/proxy-service
+        ports:
+            - '5050:80'
+    service-a:
+        build:
+            context: apps/service-a
+    service-b:
+        build:
+            context: apps/service-b
