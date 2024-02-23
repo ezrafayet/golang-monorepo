@@ -32,7 +32,7 @@ Each service manages its dependencies via its own go.mod file, employing the rep
 - Adopting a monorepo management framework such as NX or Bazel could introduce more structured dependency management and build optimization.
 - Leveraging Go's workspace feature might offer some benefits.
 
-# Running the services
+# Service Execution
 
 From the root, run:
 
