@@ -2,6 +2,23 @@
 
 Golang-monorepo is a basic monorepo for self-education, featuring Go services and shared libraries. It doesn't use a monorepo "framework" (NX or Bazel). It was proven to be good enough for small to medium projects.
 
+# Service Execution
+
+From the root, run:
+
+```bash
+make dev
+```
+
+From the browser navigate to:
+```
+- localhost:5050/api/service-a
+
+and
+
+- localhost:5050/api/service-b
+```
+
 # Project Architecture
 
 The project contains a proxy and two services, sharing a single library.
@@ -35,28 +52,14 @@ The project contains a proxy and two services, sharing a single library.
 └── Makefile
 ```
 
-## Potential Additions
+# Potential Additions
 
-- Introducing a containers directory could help organize Dockerfiles more efficiently, especially for dependencies like databases or message brokers (e.g., Kafka, RabbitMQ).
-- A pipeline directory for Continuous Integration and Continuous Deployment (CI/CD) would streamline development workflows.
-- Adding a doc folder for comprehensive documentation could significantly aid in project maintainability and onboard new contributors more smoothly.
-
-# Service Execution
-
-From the root, run:
-
-```bash
-make dev
-```
-
-From the browser navigate to:
-```
-- localhost:5050/api/service-a
-
-and
-
-- localhost:5050/api/service-b
-```
+- Introducing a `containers` directory for databases or message brokers.
+- Introducing a `tests` folder for end-to-end tests.
+- Introducing a `pipeline` directory for CI/CD.
+- Introducing a `doc` folder for documentation.
+- Introducing a `scripts` folder for utility scripts.
+- Introducing a `contracts` folder for shared interfaces or gRcp definitions.
 
 # Operational Mechanics
 
