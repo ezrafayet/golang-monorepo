@@ -1,6 +1,6 @@
 # Golang-monorepo
 
-Golang-monorepo is a basic monorepo for self-education, featuring Go services and shared libraries. It doesn't use a monorepo "framework" (NX or Bazel). It was proven to be good enough for small to medium projects.
+A basic monorepo featuring Go services and shared libraries that proved to be good enough for small to medium projects.
 
 # Quick Start
 
@@ -65,10 +65,11 @@ The project contains a proxy and two services, sharing a single library.
 
 # Operational Mechanics
 
-Each service manages its dependencies via its own go.mod file, employing the replace directive for referencing shared libraries. This setup necessitates building the project outside of Docker and subsequently transferring the binaries into the Docker environment for execution.
+Each service manages its dependencies via its own go.mod file, employing a `replace` directive for referencing shared libraries. This setup necessitates building the project outside of Docker and transferring the binaries into the Docker environment for execution.
 
 # Alternative approaches
 
-- An alternative approach involves vendoring the libraries, including shared ones, and performing the build process within the Docker environment.
-- Adopting a monorepo management framework such as NX or Bazel could introduce more structured dependency management and build optimization.
-- Leveraging Go's workspace feature might offer some benefits.
+- Using a single go.mod file at the root of the project
+- Vendoring the libraries on build and performing the build process within Docker
+- Adopting a monorepo management framework such as NX or Bazel
+- Leveraging Go's workspaces
