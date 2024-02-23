@@ -2,18 +2,37 @@
 
 Golang-monorepo is a basic monorepo for self-education, featuring Go services and shared libraries. It doesn't use a monorepo "framework" (NX or Bazel). It was proven to be good enough for small to medium projects.
 
-# Project Structure Overview
+# Project Architecture
+
+The project contains a proxy and two services, sharing a single library.
+
+```
+                            +------------+
+                        +-->|  Service A |
+                        |   +------------+
+        +---------+     |        :8000 
+        |  Proxy  +-----+  
+        +---------+     | 
+           :5000        |  
+                        |   +------------+
+                        +-->|  Service B |
+                            +------------+
+                                 :8010
+```
+
+# Project Structure
 
 ```
 .
-├── apps               # Each service is housed in its own directory here.
-│   ├── service-a      # A standalone service
-│   └── service-b      # Another standalone service
-├── libs               # This is where shared libraries are kept.
+├── apps <----------- This is where services are housed in their own directory.
+│   ├── service-a
+│   ├── service-b
+│   └── proxy-service
+├── libs <----------- This is where shared libraries are kept.
 │   └── golang
-│       └── lib-a      # An example of a shared library
-├── docker-compose.yml # Defines the services for local development
-└── Makefile           # Facilitates build and run commands
+│       └── lib-a
+├── docker-compose.yml
+└── Makefile
 ```
 
 ## Potential Additions
