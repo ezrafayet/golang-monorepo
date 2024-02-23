@@ -48,5 +48,3 @@ and
 
 - localhost:5050/api/service-b
 ```
-
-# What is missing for production
