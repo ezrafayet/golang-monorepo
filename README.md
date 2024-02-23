@@ -67,6 +67,11 @@ The project contains a proxy and two services, sharing a single library.
 
 Each service manages its dependencies via its own go.mod file, employing a `replace` directive for referencing shared libraries. This setup necessitates building the project outside of Docker and transferring the binaries into the Docker environment for execution.
 
+# Limitations
+
+- The build environment must have Go installed
+- Builds need to target the architecture of the intended Docker image
+
 # Alternative approaches
 
 - Using a single go.mod file at the root of the project
