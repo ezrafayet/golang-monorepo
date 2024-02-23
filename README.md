@@ -1,4 +1,4 @@
-# golang-monorepo
+# Golang-monorepo
 
 Golang-monorepo is a basic monorepo for self-education, featuring Go services and shared libraries. It doesn't use a monorepo "framework" (NX or Bazel). It was proven to be good enough for small to medium projects.
 
@@ -16,21 +16,11 @@ Golang-monorepo is a basic monorepo for self-education, featuring Go services an
 └── Makefile           # Facilitates build and run commands
 ```
 
-## Potential Enhancements
+## Potential Additions
 
 - Introducing a containers directory could help organize Dockerfiles more efficiently, especially for dependencies like databases or message brokers (e.g., Kafka, RabbitMQ).
 - A pipeline directory for Continuous Integration and Continuous Deployment (CI/CD) would streamline development workflows.
 - Adding a doc folder for comprehensive documentation could significantly aid in project maintainability and onboard new contributors more smoothly.
-
-# Operational Mechanics
-
-Each service manages its dependencies via its own go.mod file, employing the replace directive for referencing shared libraries. This setup necessitates building the project outside of Docker and subsequently transferring the binaries into the Docker environment for execution.
-
-## Considered Alternatives
-
-- An alternative approach involves vendoring the libraries, including shared ones, and performing the build process within the Docker environment.
-- Adopting a monorepo management framework such as NX or Bazel could introduce more structured dependency management and build optimization.
-- Leveraging Go's workspace feature might offer some benefits.
 
 # Service Execution
 
@@ -48,3 +38,13 @@ and
 
 - localhost:5050/api/service-b
 ```
+
+# Operational Mechanics
+
+Each service manages its dependencies via its own go.mod file, employing the replace directive for referencing shared libraries. This setup necessitates building the project outside of Docker and subsequently transferring the binaries into the Docker environment for execution.
+
+# Alternative approaches
+
+- An alternative approach involves vendoring the libraries, including shared ones, and performing the build process within the Docker environment.
+- Adopting a monorepo management framework such as NX or Bazel could introduce more structured dependency management and build optimization.
+- Leveraging Go's workspace feature might offer some benefits.
