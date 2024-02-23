@@ -1,6 +1,6 @@
 # Golang-monorepo
 
-A basic monorepo featuring Go services and shared libraries that proved to be good enough for small to medium projects.
+A basic setup for a monorepo featuring Go services and shared libraries, proven to be good enough for small to medium projects.
 
 # Quick Start
 
