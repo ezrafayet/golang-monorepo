@@ -2,11 +2,13 @@
 
 Golang-monorepo is a basic monorepo for self-education, featuring Go services and shared libraries. It doesn't use a monorepo "framework" (NX or Bazel). It was proven to be good enough for small to medium projects.
 
-# Service Execution
+# Quick Start
 
 From the root, run:
 
 ```bash
+make build
+
 make dev
 ```
 
@@ -14,7 +16,7 @@ From the browser navigate to:
 ```
 - localhost:5050/api/service-a
 
-and
+or
 
 - localhost:5050/api/service-b
 ```
